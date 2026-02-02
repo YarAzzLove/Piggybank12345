@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f8ff"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Заголовок -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Умная Копилка"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#2c3e50"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Статус подключения -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/panel_background"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Статус:"
+                android:textSize="16sp"
+                android:textColor="#34495e"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Не подключено"
+                android:textSize="16sp"
+                android:textColor="#e74c3c"
+                android:layout_marginStart="8dp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/connectButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Подключить"
+                android:background="@drawable/button_connect"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+        <!-- Основная информация -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <!-- Общая сумма -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/panel_background"
+                android:padding="16dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Общая сумма"
+                    android:textSize="14sp"
+                    android:textColor="#7f8c8d"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/totalAmountText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.00 ₽"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#27ae60" />
+
+            </LinearLayout>
+
+            <!-- Всего монет -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/panel_background"
+                android:padding="16dp"
+                android:layout_marginStart="8dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Всего монет"
+                    android:textSize="14sp"
+                    android:textColor="#7f8c8d"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/totalCoinsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#e67e22" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Статистика по монетам -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/panel_background"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Статистика монет"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#2c3e50"
+                android:layout_marginBottom="16dp" />
+
+            <!-- 50 копеек -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="50 копеек"
+                    android:textSize="14sp"
+                    android:textColor="#34495e" />
+
+                <TextView
+                    android:id="@+id/coin50Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 шт"
+                    android:textSize="14sp"
+                    android:textColor="#34495e"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- 1 рубль -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="1 рубль"
+                    android:textSize="14sp"
+                    android:textColor="#34495e" />
+
+                <TextView
+                    android:id="@+id/coin1Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 шт"
+                    android:textSize="14sp"
+                    android:textColor="#34495e"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- 2 рубля -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2 рубля"
+                    android:textSize="14sp"
+                    android:textColor="#34495e" />
+
+                <TextView
+                    android:id="@+id/coin2Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 шт"
+                    android:textSize="14sp"
+                    android:textColor="#34495e"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- 5 рублей -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="5 рублей"
+                    android:textSize="14sp"
+                    android:textColor="#34495e" />
+
+                <TextView
+                    android:id="@+id/coin5Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 шт"
+                    android:textSize="14sp"
+                    android:textColor="#34495e"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- 10 рублей -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="10 рублей"
+                    android:textSize="14sp"
+                    android:textColor="#34495e" />
+
+                <TextView
+                    android:id="@+id/coin10Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 шт"
+                    android:textSize="14sp"
+                    android:textColor="#34495e"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Управление -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/panel_background"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Управление"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#2c3e50"
+                android:layout_marginBottom="16dp" />
+
+            <Button
+                android:id="@+id/resetButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Сбросить статистику"
+                android:background="@drawable/button_reset"
+                android:textColor="#ffffff"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/calibrateButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Калибровка"
+                android:background="@drawable/button_calibrate"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+        <!-- Лог событий -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/panel_background"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Лог событий"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#2c3e50"
+                android:layout_marginBottom="8dp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/log_background">
+
+                <TextView
+                    android:id="@+id/logText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="2dp"
+                    android:padding="8dp"
+                    android:text="Готов к работе...\n"
+                    android:textColor="#2c3e50"
+                    android:textSize="12sp" />
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
